@@ -1,0 +1,66 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  .logo {
+    margin-right: 20px; /* Ajusta el espaciado entre el logo y el contenido */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .containerLogo{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .nav-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-link {
+    margin-right: 10px; /* Ajusta el espaciado entre los elementos de navegación */
+  }
+  
+  .categories-container {
+    position: relative;
+    margin-right: 20px; /* Ajusta el espaciado entre el enlace de categorías y los demás elementos */
+  }
+  
+  .categories-container a {
+    cursor: pointer;
+  }
+  
+  .nav-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+    background-color: #fff; /* Ajusta el color de fondo de la lista */
+    border: 1px solid #ccc; /* Ajusta el estilo del borde de la lista */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ajusta la sombra de la lista */
+  }
+  
+  .categories-container:hover .nav-list {
+    display: block;
+  }
+  
+  .nav-list li {
+    margin-bottom: 8px; /* Ajusta el espaciado entre los elementos de la lista */
+  }
+  
+  .user-container {
+    margin-left: 8px; /* Ajusta el espaciado entre el icono de usuario y los demás elementos */
+  }
+  .burguer{
+      @media (min-width: 768px) {
+      display: none;
+    
+  }
+  }

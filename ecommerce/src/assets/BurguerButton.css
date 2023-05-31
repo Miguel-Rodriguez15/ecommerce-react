@@ -1,0 +1,12 @@
+.hamburger-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .hamburger-button.open {
+    outline: none; /* Quita el contorno al hacer clic */
+  }
+  
+  /* Estilos adicionales según tus necesidades */
+  

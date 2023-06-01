@@ -59,27 +59,28 @@ const CrearCuenta = ({ onLogin }) => {
       ) : (
         <div id="formulario-inicio-sesion">
           <FaUserPlus id="FaUserCircle" />
-          <input
+          <input className="input-inicio-sesion"
             type="email"
             value={email}
             onChange={handleEmailChange}
             placeholder="Correo electrónico"
           />
-          <input
+          <input className="input-inicio-sesion"
             type="password"
             value={password}
             onChange={handlePasswordChange}
             placeholder="Contraseña"
           />
 
-          <input
+          <input className="input-inicio-sesion"
             type="password"
             value={confirmPassword}
             onChange={handleConfirmPasswordChange}
             placeholder="Confirmar contraseña"
           />
 
-          <button onClick={handleCrearCuenta}>Crear cuenta</button>
+          <button className="btn-inicio-sesion"
+          onClick={handleCrearCuenta}>Crear cuenta</button>
 
           <p>
             ¿Ya tienes cuenta?{" "}

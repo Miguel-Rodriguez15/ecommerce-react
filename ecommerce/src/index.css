@@ -59,16 +59,36 @@ header {
 	font-size: 12px;
 }
 
-.container-cart-products {
+.container-cart-products, .container-login {
 	position: absolute;
 	top: 50px;
 	right: 0;
-
 	background-color: #fff;
 	width: 400px;
 	z-index: 1;
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 	border-radius: 10px;
+}
+
+.container-login {
+	width: 200px;
+}
+
+.btn-login{
+	text-align: center;
+	background-color: #000;
+	color: #fff;
+	cursor: pointer;
+	padding: 15px;
+	margin: 15px 20px;
+	font-size: 16px;
+	display: block;
+}
+
+.btn-login:hover{
+	background-color: #333;
+	transform: scale(1.03);
+	transition: all .3s ease;
 }
 
 .cart-product {

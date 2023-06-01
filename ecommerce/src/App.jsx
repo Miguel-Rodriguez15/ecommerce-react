@@ -1,8 +1,7 @@
 import { useState } from "react";
 import Header from "./assets/Header";
-
 import Login from "./Login";
-
+import CrearCuenta from "./CrearCuenta";
 import "./App.css";
 import { Navbar } from "./Navbar";
 import { ProductList } from "./assets/ProductList";
@@ -11,10 +10,27 @@ function App() {
   const [allProducts, setallProducts] = useState([]);
   const [total, setTotal] = useState(0);
   const [contadorProducts, setcontadorProducts] = useState(0);
-  const [showLogin, setShowLogin] = useState(false);
+  const [activeComponent, setActiveComponent] = useState(null);
 
-  const handleLoginClick = () => {
-    setShowLogin(true);
+  const renderMainContent = () => {
+    if (activeComponent === "Login") {
+      return <Login />;
+    }
+
+    if (activeComponent === "CrearCuenta") {
+      return <CrearCuenta />;
+    }
+
+    return (
+      <ProductList
+        allProducts={allProducts}
+        setallProducts={setallProducts}
+        total={total}
+        setTotal={setTotal}
+        contadorProducts={contadorProducts}
+        setcontadorProducts={setcontadorProducts}
+      />
+    );
   };
 
   return (
@@ -26,20 +42,10 @@ function App() {
         setTotal={setTotal}
         contadorProducts={contadorProducts}
         setcontadorProducts={setcontadorProducts}
+        setActiveComponent={setActiveComponent}
       />
 
-      {showLogin ? (
-        <ProductList
-          allProducts={allProducts}
-          setallProducts={setallProducts}
-          total={total}
-          setTotal={setTotal}
-          contadorProducts={contadorProducts}
-          setcontadorProducts={setcontadorProducts}
-        />
-      ) : (
-        <Login />
-      )}
+      <main>{renderMainContent()}</main>
     </>
   );
 }

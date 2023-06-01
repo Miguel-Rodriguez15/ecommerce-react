@@ -19,7 +19,7 @@ export const Navbar = ({
   setTotal,
   contadorProducts,
   setcontadorProducts,
-  setActiveComponent
+  setActiveComponent,
 }) => {
   const [activo, setActivo] = useState(false);
   const [isCategoriesOpen, setCategoriesOpen] = useState(false);
@@ -27,10 +27,20 @@ export const Navbar = ({
 
   const handleCategoriesClick = () => {
     setCategoriesOpen(!isCategoriesOpen);
+    setLoginOpen(false);
+    setActivo(false);
   };
 
   const handleLoginClick = () => {
     setLoginOpen(!isLoginOpen);
+    setCategoriesOpen(false);
+    setActivo(false);
+  };
+
+  const handleCartClick = () => {
+    setActivo(!activo);
+    setLoginOpen(false);
+    setCategoriesOpen(false);
   };
 
   const onDeleteProduct = (product) => {
@@ -106,11 +116,11 @@ export const Navbar = ({
               </section>
             )}
           </div>
-          
+
           <div className="container-icon">
             <div
               className="container-cart-icon"
-              onClick={() => setActivo(!activo)}
+              onClick={handleCartClick}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

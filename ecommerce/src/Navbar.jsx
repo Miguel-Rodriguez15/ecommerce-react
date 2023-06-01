@@ -6,12 +6,12 @@ import "./assets/Navbar.css";
 
 import CrearCuenta from "./CrearCuenta";
 import "./assets/pruebas.css";
-import
- {
-  FaSearchDollar,
-  FaUserAlt,
-  FaCaretDown,
-  FaCaretUp,
+import {
+
+FaHome,
+FaUserAlt,
+FaCaretDown,
+FaCaretUp,
 } from "react-icons/fa";
 
 export const Navbar = ({
@@ -75,14 +75,15 @@ export const Navbar = ({
       <header className="container">
         <picture className="containerLogo">
           {" "}
-          <a onClick={changeMainHome} className="home-link">
-           <h2>Home</h2>  
-          </a>
+
           <img className="logo" src="" alt="" />
         </picture>
         <nav className="nav-container">
           <a>
             <SearchBox />
+          </a>
+          <a onClick={changeMainHome} className="home-link">
+            <FaHome className="home" />
           </a>
           <div className="categories-container">
             <a href="#" onClick={handleCategoriesClick}>
@@ -98,7 +99,7 @@ export const Navbar = ({
           </div>
           <div className="categories-container">
             <a href="#" onClick={handleLoginClick}>
-              <FaUserAlt /> {isLoginOpen ? <FaCaretUp /> : <FaCaretDown />}
+              <FaUserAlt className=" user" /> {isLoginOpen ? <FaCaretUp /> : <FaCaretDown />}
             </a>
             {isLoginOpen && (
               <section className="container-login">
@@ -144,9 +145,8 @@ export const Navbar = ({
             </div>
 
             <div
-              className={`container-cart-products ${
-                activo ? "" : "hidden-cart"
-              }`}
+              className={`container-cart-products ${activo ? "" : "hidden-cart"
+                }`}
             >
               {allProducts.length ? (
                 <>

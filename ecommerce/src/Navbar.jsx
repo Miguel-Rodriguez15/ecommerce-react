@@ -6,7 +6,8 @@ import "./assets/Navbar.css";
 
 import CrearCuenta from "./CrearCuenta";
 import "./assets/pruebas.css";
-import {
+import
+ {
   FaSearchDollar,
   FaUserAlt,
   FaCaretDown,
@@ -23,26 +24,17 @@ export const Navbar = ({
   setActiveComponent,
 }) => {
   const [activo, setActivo] = useState(false);
-  const [isCategoriesOpen, setCategoriesOpen] = useState(false);
   const [isLoginOpen, setLoginOpen] = useState(false);
   const navbarRef = useRef(null);
 
-  const handleCategoriesClick = () => {
-    setCategoriesOpen(!isCategoriesOpen);
-    setLoginOpen(false);
-    setActivo(false);
-  };
-
   const handleLoginClick = () => {
     setLoginOpen(!isLoginOpen);
-    setCategoriesOpen(false);
     setActivo(false);
   };
 
   const handleCartClick = () => {
     setActivo(!activo);
     setLoginOpen(false);
-    setCategoriesOpen(false);
   };
 
   const onDeleteProduct = (product) => {
@@ -70,28 +62,13 @@ export const Navbar = ({
     setActiveComponent(null);
   };
 
-  const handleOutsideClick = (event) => {
-    if (navbarRef.current && !navbarRef.current.contains(event.target)) {
-      setActivo(false);
-      setLoginOpen(false);
-      setCategoriesOpen(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("mousedown", handleOutsideClick);
-
-    return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
-    };
-  }, []);
-
   return (
     <>
       <header className="container" ref={navbarRef}>
         <picture className="containerLogo">
+          {" "}
           <a onClick={changeMainHome} className="home-link">
-            <h2>Home</h2>
+           <h2>Home</h2>  
           </a>
           <img className="logo" src="" alt="" />
         </picture>
@@ -99,18 +76,10 @@ export const Navbar = ({
           <a>
             <SearchBox />
           </a>
-          <div className="categories-container">
-            <a href="#" onClick={handleCategoriesClick}>
-              Categorías {isCategoriesOpen ? <FaCaretUp /> : <FaCaretDown />}
-            </a>
-            {isCategoriesOpen && (
-              <ul className="nav-list">
-                <li>lo mas visto</li>
-                <li>mas comprados</li>
-                <li>Elegidos para ti</li>
-              </ul>
-            )}
-          </div>
+          <a onClick={changeMainHome} className="home-link">
+            <FaHome className="home" />
+          </a>
+
           <div className="categories-container">
             <a href="#" onClick={handleLoginClick}>
               <FaUserAlt /> {isLoginOpen ? <FaCaretUp /> : <FaCaretDown />}

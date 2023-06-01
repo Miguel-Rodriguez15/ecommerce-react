@@ -60,6 +60,16 @@
   margin-left: 8px; /* Ajusta el espaciado entre el icono de usuario y los demás elementos */
 }
 
+.home  {
+  font-size: 40px;
+  margin: 10px;
+}
+.user  {
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+
+}
 .home-link{
   text-decoration: none;
   color: #000;

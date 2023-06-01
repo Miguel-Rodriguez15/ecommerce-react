@@ -1,0 +1,36 @@
+.footer{
+    margin-top: 2rem;
+    font-family: 'Lato';
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.seccion-footer{
+    width: 49%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-up{
+    margin: 8% 20%;
+}
+
+.footer-up h3{
+    margin-bottom: 1rem;
+}
+
+.footer-up p{
+    height: 100%;
+    width: 100%;
+    text-align: justify;
+}
+
+.icono-footer{
+    font-size: 2rem;
+    margin: 0 1rem;
+}

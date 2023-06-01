@@ -5,6 +5,8 @@ import CrearCuenta from "./CrearCuenta";
 import "./App.css";
 import { Navbar } from "./Navbar";
 import { ProductList } from "./assets/ProductList";
+import Footer from "./Footer";
+
 
 function App() {
   const [allProducts, setallProducts] = useState([]);
@@ -46,6 +48,8 @@ function App() {
       />
 
       <main>{renderMainContent()}</main>
+
+      <Footer />
     </>
   );
 }

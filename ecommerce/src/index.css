@@ -9,7 +9,7 @@
 	box-sizing: border-box;
 }
 
-body {
+main, header {
 	margin: 0 auto;
 	max-width: 1200px;
 	font-family: 'Lato';

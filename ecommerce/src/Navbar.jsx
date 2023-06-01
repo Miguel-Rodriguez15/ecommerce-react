@@ -8,7 +8,7 @@ import {
   FaCaretDown,
   FaCaretUp,
 } from "react-icons/fa";
-import BurguerBotton from "./assets/BurguerBotton";
+import { useState } from "react";
 export const Navbar = ({
   allProducts,
   setallProducts,
@@ -29,15 +29,11 @@ export const Navbar = ({
     setcontadorProducts(contadorProducts - product.cantidad);
     setallProducts(resultado);
   };
-  const onClearCart = () => {
-    setallProducts([]);
-    setTotal(0);
-    setcontadorProducts(0);
-  };
-
-  const handleShowLogin = () => {
-    onLoginClick();
-  };
+  const onClearCart=()=>{
+  setallProducts([])
+  setTotal(0)
+  setcontadorProducts(0)
+  }
 
   return (
     <>
@@ -48,8 +44,8 @@ export const Navbar = ({
           <img className="logo" src="" alt="" />
         </picture>
         <nav className="nav-container">
-          <a href="" className="nav-link">
-            <FaSearchDollar />
+          <a >
+            <SearchBox />
           </a>
 
           <div className="categories-container">
@@ -94,9 +90,8 @@ export const Navbar = ({
             </div>
 
             <div
-              className={`container-cart-products ${
-                activo ? "" : "hidden-cart"
-              }`}
+              className={`container-cart-products ${activo ? "" : "hidden-cart"
+                }`}
             >
               {allProducts.length ? (
                 <>
@@ -146,9 +141,6 @@ export const Navbar = ({
                 <p className="cart-empty">El carrito está vacío</p>
               )}
             </div>
-          </div>
-          <div className="burguer">
-            <BurguerBotton />
           </div>
         </nav>
       </header>

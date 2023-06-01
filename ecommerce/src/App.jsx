@@ -13,6 +13,7 @@ function App() {
   const [total, setTotal] = useState(0);
   const [contadorProducts, setcontadorProducts] = useState(0);
   const [activeComponent, setActiveComponent] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const renderMainContent = () => {
     if (activeComponent === "Login") {

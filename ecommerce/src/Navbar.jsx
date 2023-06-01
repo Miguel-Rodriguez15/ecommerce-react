@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect, useRef } from "react";
 import Login from "./Login";
 
 import SearchBox from "./SearchBox";
@@ -6,8 +6,7 @@ import "./assets/Navbar.css";
 
 import CrearCuenta from "./CrearCuenta";
 import "./assets/pruebas.css";
-import
- {
+import {
   FaSearchDollar,
   FaUserAlt,
   FaCaretDown,
@@ -26,6 +25,7 @@ export const Navbar = ({
   const [activo, setActivo] = useState(false);
   const [isCategoriesOpen, setCategoriesOpen] = useState(false);
   const [isLoginOpen, setLoginOpen] = useState(false);
+  const navbarRef = useRef(null);
 
   const handleCategoriesClick = () => {
     setCategoriesOpen(!isCategoriesOpen);
@@ -70,13 +70,28 @@ export const Navbar = ({
     setActiveComponent(null);
   };
 
+  const handleOutsideClick = (event) => {
+    if (navbarRef.current && !navbarRef.current.contains(event.target)) {
+      setActivo(false);
+      setLoginOpen(false);
+      setCategoriesOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
+
   return (
     <>
-      <header className="container">
+      <header className="container" ref={navbarRef}>
         <picture className="containerLogo">
-          {" "}
           <a onClick={changeMainHome} className="home-link">
-           <h2>Home</h2>  
+            <h2>Home</h2>
           </a>
           <img className="logo" src="" alt="" />
         </picture>
@@ -120,10 +135,7 @@ export const Navbar = ({
           </div>
 
           <div className="container-icon">
-            <div
-              className="container-cart-icon"
-              onClick={handleCartClick}
-            >
+            <div className="container-cart-icon" onClick={handleCartClick}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

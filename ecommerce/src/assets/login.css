@@ -32,3 +32,15 @@
     padding: 0 15px;
     width: 11%;
 }
+
+@media only screen and(max-width: 900px) {
+    #formulario-inicio-sesion{
+        height: 100vh;
+    }
+    .input-inicio-sesion, .btn-inicio-sesion {
+        width: 50%;
+    }
+    #FaUserCircle{
+        font-size: 3rem;
+    }
+}

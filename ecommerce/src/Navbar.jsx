@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import Login from "./Login";
+
 import "./assets/Navbar.css";
 import {
   FaSearchDollar,
@@ -6,7 +8,6 @@ import {
   FaCaretDown,
   FaCaretUp,
 } from "react-icons/fa";
-import { useState } from "react";
 import BurguerBotton from "./assets/BurguerBotton";
 export const Navbar = ({
   allProducts,
@@ -23,16 +24,20 @@ export const Navbar = ({
     setCategoriesOpen(!isCategoriesOpen);
   };
   const onDeleteProduct = (product) => {
-    const resultado = allProducts.filter(item => item.id !== product.id);
+    const resultado = allProducts.filter((item) => item.id !== product.id);
     setTotal(total - product.price * product.cantidad);
     setcontadorProducts(contadorProducts - product.cantidad);
-    setallProducts(resultado)
+    setallProducts(resultado);
   };
-  const onClearCart=()=>{
-  setallProducts([])
-  setTotal(0)
-  setcontadorProducts(0)
-  }
+  const onClearCart = () => {
+    setallProducts([]);
+    setTotal(0);
+    setcontadorProducts(0);
+  };
+
+  const handleShowLogin = () => {
+    onLoginClick();
+  };
 
   return (
     <>
@@ -60,11 +65,10 @@ export const Navbar = ({
             )}
           </div>
           <div className="user-container">
-            <a href="/" className="nav-link">
+            <a href="#" className="nav-link" onClick={handleShowLogin}>
               <FaUserAlt />
             </a>
           </div>
-
           <div className="container-icon">
             <div
               className="container-cart-icon"
@@ -134,7 +138,9 @@ export const Navbar = ({
                     <span className="total-pagar">${total}</span>
                   </div>
 
-                  <button className="btn-clear-all" onClick={onClearCart}>Vaciar Carrito</button>
+                  <button className="btn-clear-all" onClick={onClearCart}>
+                    Vaciar Carrito
+                  </button>
                 </>
               ) : (
                 <p className="cart-empty">El carrito está vacío</p>

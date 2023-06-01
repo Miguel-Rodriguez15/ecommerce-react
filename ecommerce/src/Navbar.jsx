@@ -6,9 +6,8 @@ import "./assets/Navbar.css";
 
 import CrearCuenta from "./CrearCuenta";
 import "./assets/pruebas.css";
-import
- {
-  FaSearchDollar,
+import {
+  FaHome,
   FaUserAlt,
   FaCaretDown,
   FaCaretUp,
@@ -62,13 +61,27 @@ export const Navbar = ({
     setActiveComponent(null);
   };
 
+  const handleOutsideClick = (event) => {
+    if (navbarRef.current && !navbarRef.current.contains(event.target)) {
+      setActivo(false);
+      setLoginOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
+
   return (
     <>
       <header className="container" ref={navbarRef}>
         <picture className="containerLogo">
-          {" "}
           <a onClick={changeMainHome} className="home-link">
-           <h2>Home</h2>  
+            <h2>Home</h2>
           </a>
           <img className="logo" src="" alt="" />
         </picture>

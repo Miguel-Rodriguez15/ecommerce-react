@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 import Login from "./Login";
 
+import SearchBox from "./SearchBox;";
 import "./assets/Navbar.css";
 import {
   FaSearchDollar,
@@ -8,7 +9,7 @@ import {
   FaCaretDown,
   FaCaretUp,
 } from "react-icons/fa";
-import { useState } from "react";
+
 export const Navbar = ({
   allProducts,
   setallProducts,
@@ -61,7 +62,7 @@ export const Navbar = ({
             )}
           </div>
           <div className="user-container">
-            <a href="#" className="nav-link" onClick={handleShowLogin}>
+            <a href="#" className="nav-link">
               <FaUserAlt />
             </a>
           </div>

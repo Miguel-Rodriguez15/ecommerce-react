@@ -1,5 +1,6 @@
 import React from "react";
 import { data } from "../data/data";
+
 export const ProductList = ({
   allProducts,
   setallProducts,
@@ -13,7 +14,7 @@ export const ProductList = ({
       const products = allProducts.map((item) =>
         item.id === product.id ? { ...item, cantidad: item.cantidad + 1 } : item
       );
-      
+
       setTotal(total + product.price * product.cantidad);
       setcontadorProducts(contadorProducts + product.cantidad);
       return setallProducts([...products]);
@@ -27,9 +28,9 @@ export const ProductList = ({
     <div className="container-items">
       {data.map((product) => (
         <div className="item" key={product.id}>
-          <figure>
+          <picture>
             <img src={product.image} alt={product.NombreProducto} />
-          </figure>
+          </picture>
           <div className="info-product">
             <h2>{product.NombreProducto}</h2>
             <p className="price">${product.price}</p>

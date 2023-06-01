@@ -85,18 +85,7 @@ export const Navbar = ({
           <a onClick={changeMainHome} className="home-link">
             <FaHome className="home" />
           </a>
-          <div className="categories-container">
-            <a href="#" onClick={handleCategoriesClick}>
-              Categorías {isCategoriesOpen ? <FaCaretUp /> : <FaCaretDown />}
-            </a>
-            {isCategoriesOpen && (
-              <ul className="nav-list">
-                <li>lo mas visto</li>
-                <li>mas comprados</li>
-                <li>Elegidos para ti</li>
-              </ul>
-            )}
-          </div>
+
           <div className="categories-container">
             <a href="#" onClick={handleLoginClick}>
               <FaUserAlt className=" user" /> {isLoginOpen ? <FaCaretUp /> : <FaCaretDown />}

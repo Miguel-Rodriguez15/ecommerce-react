@@ -3,13 +3,16 @@ import Login from "./Login";
 
 import SearchBox from "./SearchBox;";
 import "./assets/Navbar.css";
-import {
+import Login from "./Login";
+import CrearCuenta from "./CrearCuenta";
+import "./assets/pruebas.css";
+ {
   FaSearchDollar,
   FaUserAlt,
   FaCaretDown,
   FaCaretUp,
 } from "react-icons/fa";
-
+import { useState } from "react";
 export const Navbar = ({
   allProducts,
   setallProducts,
@@ -17,38 +20,59 @@ export const Navbar = ({
   setTotal,
   contadorProducts,
   setcontadorProducts,
+  setActiveComponent
 }) => {
   const [activo, setActivo] = useState(false);
   const [isCategoriesOpen, setCategoriesOpen] = useState(false);
+  const [isLoginOpen, setLoginOpen] = useState(false);
 
   const handleCategoriesClick = () => {
     setCategoriesOpen(!isCategoriesOpen);
   };
+
+  const handleLoginClick = () => {
+    setLoginOpen(!isLoginOpen);
+  };
+
   const onDeleteProduct = (product) => {
     const resultado = allProducts.filter((item) => item.id !== product.id);
     setTotal(total - product.price * product.cantidad);
     setcontadorProducts(contadorProducts - product.cantidad);
     setallProducts(resultado);
   };
-  const onClearCart=()=>{
-  setallProducts([])
-  setTotal(0)
-  setcontadorProducts(0)
-  }
+
+  const onClearCart = () => {
+    setallProducts([]);
+    setTotal(0);
+    setcontadorProducts(0);
+  };
+
+  const changeMainLogin = () => {
+    setActiveComponent("Login");
+  };
+
+  const changeMainCuenta = () => {
+    setActiveComponent("CrearCuenta");
+  };
+
+  const changeMainHome = () => {
+    setActiveComponent(null);
+  };
 
   return (
     <>
       <header className="container">
         <picture className="containerLogo">
           {" "}
-          prueba
+          <span onClick={changeMainHome} className="home-link">
+            prueba
+          </span>
           <img className="logo" src="" alt="" />
         </picture>
         <nav className="nav-container">
-          <a >
+          <a>
             <SearchBox />
           </a>
-
           <div className="categories-container">
             <a href="#" onClick={handleCategoriesClick}>
               Categorías {isCategoriesOpen ? <FaCaretUp /> : <FaCaretDown />}
@@ -62,10 +86,28 @@ export const Navbar = ({
             )}
           </div>
           <div className="user-container">
-            <a href="#" className="nav-link">
+            <a href="#" className="nav-link" onClick={handleShowLogin}>
               <FaUserAlt />
             </a>
+            {isLoginOpen && (
+              <section className="container-login">
+                <div
+                  className="btn-login iniciar-sesion"
+                  onClick={changeMainLogin}
+                >
+                  Iniciar Sesión
+                </div>
+
+                <div
+                  className="btn-login crear-cuenta"
+                  onClick={changeMainCuenta}
+                >
+                  Crear Cuenta
+                </div>
+              </section>
+            )}
           </div>
+          
           <div className="container-icon">
             <div
               className="container-cart-icon"
@@ -91,8 +133,9 @@ export const Navbar = ({
             </div>
 
             <div
-              className={`container-cart-products ${activo ? "" : "hidden-cart"
-                }`}
+              className={`container-cart-products ${
+                activo ? "" : "hidden-cart"
+              }`}
             >
               {allProducts.length ? (
                 <>

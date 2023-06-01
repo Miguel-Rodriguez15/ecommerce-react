@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 
 export const Header=({
@@ -29,8 +29,7 @@ export const Header=({
 	};
 
 	return (
-		<header> 
-
+		<header>
 			<div className='container-icon'>
 				<div
 					className='container-cart-icon'

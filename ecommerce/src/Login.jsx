@@ -52,21 +52,21 @@ const Login = ({ onLogin }) => {
       ) : (
         <div id="formulario-inicio-sesion">
           <FaUserCircle id="FaUserCircle" />
-          <input
+          <input className="input-inicio-sesion"
             type="email"
             id="correo"
             value={email}
             onChange={handleEmailChange}
             placeholder="Correo electrónico"
           />
-          <input
+          <input className="input-inicio-sesion"
             type="password"
             id="contrasegna"
             value={password}
             onChange={handlePasswordChange}
             placeholder="Contraseña"
           />
-          <button onClick={handleLogin}>Iniciar sesión</button>
+          <button className="btn-inicio-sesion" onClick={handleLogin}>Iniciar sesión</button>
           <p>
             ¿Aún no tienes cuenta?{" "}
             <a href="#" onClick={handleSignUpClick}>

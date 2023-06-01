@@ -13,7 +13,7 @@
     color: #000000;
 }
 
-input, button {
+.input-inicio-sesion, .btn-inicio-sesion {
     width: 33%;
     height: 40px;
     border-radius: 5px;
@@ -24,7 +24,7 @@ input, button {
     margin: 1vh;
 }
 
-button {
+.btn-inicio-sesion {
     background: #000000;
     color: #fff;
     border: 0;

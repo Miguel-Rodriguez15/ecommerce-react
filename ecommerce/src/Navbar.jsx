@@ -1,17 +1,19 @@
-import React from "react";
-import "./assets/Navbar.css";
+import React, { useState } from "react"
 import Login from "./Login";
+
+import SearchBox from "./SearchBox";
+import "./assets/Navbar.css";
+
 import CrearCuenta from "./CrearCuenta";
 import "./assets/pruebas.css";
-import {
+import
+ {
   FaSearchDollar,
   FaUserAlt,
   FaCaretDown,
   FaCaretUp,
 } from "react-icons/fa";
-import { useState } from "react";
 
-import SearchBox from "./SearchBox";
 export const Navbar = ({
   allProducts,
   setallProducts,
@@ -73,9 +75,9 @@ export const Navbar = ({
       <header className="container">
         <picture className="containerLogo">
           {" "}
-          <span onClick={changeMainHome} className="home-link">
-            prueba
-          </span>
+          <a onClick={changeMainHome} className="home-link">
+           <h2>Home</h2>  
+          </a>
           <img className="logo" src="" alt="" />
         </picture>
         <nav className="nav-container">

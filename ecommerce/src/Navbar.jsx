@@ -1,18 +1,19 @@
 import React, { useState } from "react"
 import Login from "./Login";
 
-import SearchBox from "./SearchBox;";
+import SearchBox from "./SearchBox";
 import "./assets/Navbar.css";
-import Login from "./Login";
+
 import CrearCuenta from "./CrearCuenta";
 import "./assets/pruebas.css";
+import
  {
   FaSearchDollar,
   FaUserAlt,
   FaCaretDown,
   FaCaretUp,
 } from "react-icons/fa";
-import { useState } from "react";
+
 export const Navbar = ({
   allProducts,
   setallProducts,
@@ -64,9 +65,9 @@ export const Navbar = ({
       <header className="container">
         <picture className="containerLogo">
           {" "}
-          <span onClick={changeMainHome} className="home-link">
-            prueba
-          </span>
+          <a onClick={changeMainHome} className="home-link">
+           <h2>Home</h2>  
+          </a>
           <img className="logo" src="" alt="" />
         </picture>
         <nav className="nav-container">
@@ -85,9 +86,9 @@ export const Navbar = ({
               </ul>
             )}
           </div>
-          <div className="user-container">
-            <a href="#" className="nav-link" onClick={handleShowLogin}>
-              <FaUserAlt />
+          <div className="categories-container">
+            <a href="#" onClick={handleLoginClick}>
+              <FaUserAlt /> {isLoginOpen ? <FaCaretUp /> : <FaCaretDown />}
             </a>
             {isLoginOpen && (
               <section className="container-login">

@@ -26,8 +26,6 @@ const Login = ({ onLogin }) => {
     setShowSignUp(true);
   };
 
-  
-
   const handleLogin = () => {
     signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {

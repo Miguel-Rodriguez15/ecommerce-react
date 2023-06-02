@@ -15,12 +15,16 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Agrega el estado isLoggedIn
 
   const renderMainContent = () => {
-    if (activeComponent === "Login") {
-      return <Login onLogin={() => setIsLoggedIn(true)}/>;
-    }
+    if(!isLoggedIn) {
 
-    if (activeComponent === "CrearCuenta") {
-      return <CrearCuenta />;
+      if (activeComponent === "Login") {
+        return <Login onLogin={() => setIsLoggedIn(true)}/>;
+      }
+  
+      if (activeComponent === "CrearCuenta") {
+        return <CrearCuenta />;
+      }
+
     }
 
     return (

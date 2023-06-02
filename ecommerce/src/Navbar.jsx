@@ -68,6 +68,7 @@ export const Navbar = ({
     signOut(auth)
       .then(() => {
         console.log("Sesión cerrada");
+        setActiveComponent(null);
         setIsLoggedIn(false);
       })
       .catch((error) => {

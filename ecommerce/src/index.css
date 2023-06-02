@@ -11,8 +11,8 @@
 	box-sizing: border-box;
 }
 
-main,
-header {
+main
+ {
 	margin: 0 auto;
 	max-width: 1200px;
 	font-family: 'Lato';
@@ -32,8 +32,10 @@ header {
 }
 h2{
 	font-family: 'Montserrat', sans-serif;
+	color: white;
 }
 p{
 	font-family: 'Montserrat', sans-serif;
 	font-size: 18px;
+	color: white;
 }

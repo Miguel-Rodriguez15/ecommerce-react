@@ -6,7 +6,7 @@ import CrearCuenta from "./CrearCuenta";
 import { app, auth } from "./conf-firebase";
 import { getAuth } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
-
+import "./assets/login.css"
 import { FaUserCircle } from "react-icons/fa";
 
 const Login = ({ onLogin }) => {
@@ -28,18 +28,18 @@ const Login = ({ onLogin }) => {
 
   const handleLogin = () => {
     signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Si el inicio de sesión es exitoso
-      const user = userCredential.user;
-      onLogin(); // Llamar a la función onLogin para indicar que el usuario ha iniciado sesión
-      console.log('Inicio de sesión exitoso', user);
-    })
-    .catch((error) => {
-      // Si ocurre un error
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log('Error al iniciar sesión', errorCode, errorMessage);
-    });
+      .then((userCredential) => {
+        // Si el inicio de sesión es exitoso
+        const user = userCredential.user;
+        onLogin(); // Llamar a la función onLogin para indicar que el usuario ha iniciado sesión
+        console.log('Inicio de sesión exitoso', user);
+      })
+      .catch((error) => {
+        // Si ocurre un error
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log('Error al iniciar sesión', errorCode, errorMessage);
+      });
   };
 
   const handleSignUpSuccess = () => {
@@ -47,36 +47,41 @@ const Login = ({ onLogin }) => {
   };
 
   return (
-    <div>
-      {showSignUp ? (
-        <CrearCuenta onLogin={handleSignUpSuccess} />
-      ) : (
-        <div id="formulario-inicio-sesion">
-          <FaUserCircle id="FaUserCircle" />
-          <input className="input-inicio-sesion"
-            type="email"
-            id="correo"
-            value={email}
-            onChange={handleEmailChange}
-            placeholder="Correo electrónico"
-          />
-          <input className="input-inicio-sesion"
-            type="password"
-            id="contrasegna"
-            value={password}
-            onChange={handlePasswordChange}
-            placeholder="Contraseña"
-          />
-          <button className="btn-inicio-sesion" onClick={handleLogin}>Iniciar sesión</button>
-          <p>
-            ¿Aún no tienes cuenta?{" "}
-            <a href="#" onClick={handleSignUpClick}>
-              Regístrate
-            </a>
-          </p>
-        </div>
-      )}
-    </div>
+    <section className="formulario-inicio-sesion">
+      <article className="login-box ">
+        {showSignUp ? (
+          <CrearCuenta onLogin={handleSignUpSuccess} />
+        ) : (
+
+          <form className="">
+            <section className="user-box">
+              <input
+                type="email"
+                id="correo"
+                value={email}
+                onChange={handleEmailChange}
+                placeholder="Correo electrónico"
+              /></section>
+            <section className="user-box">
+              <input
+                type="password"
+                id="contrasegna"
+                value={password}
+                onChange={handlePasswordChange}
+                placeholder="Contraseña"
+              /></section>
+            <a onClick={handleLogin}>Iniciar sesión</a>
+            <p>
+              ¿Aún no tienes cuenta?{" "}
+              <a href="#" onClick={handleSignUpClick}>
+                Regístrate
+              </a>
+            </p>
+          </form>
+
+        )}
+      </article>
+    </section>
   );
 };
 

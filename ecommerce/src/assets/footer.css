@@ -2,7 +2,8 @@
     margin-top: 2rem;
     font-family: 'Lato', sans-serif;
     width: 100%;
-    background-color: #000000;
+    height: 100%;
+    background: rgba(0,0,0,.5);
     color: #ffffff;
     display: flex;
     justify-content: center;
@@ -17,7 +18,7 @@
 }
 
 .footer-up{
-    margin: 8% 20%;
+    margin: 8% 10%;
 }
 
 .footer-up h3{
@@ -25,7 +26,7 @@
 }
 
 .footer-up p{
-    height: 100%;
+    height: 50%;
     width: 100%;
     text-align: justify;
 }

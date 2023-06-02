@@ -5,7 +5,8 @@ import { auth } from "./conf-firebase";
 import Login from "./Login";
 import SearchBox from "./SearchBox";
 import CrearCuenta from "./CrearCuenta";
-import { FaHome, FaUserAlt, FaCaretDown, FaCaretUp } from "react-icons/fa";
+import { AiOutlineUser, AiOutlineHome } from "react-icons/ai";
+import { FaHome,  FaCaretDown, FaCaretUp } from "react-icons/fa";
 
 export const Navbar = ({
   allProducts,
@@ -99,47 +100,47 @@ export const Navbar = ({
             <SearchBox />
           </a>
           <a onClick={changeMainHome} className="home-link">
-            <FaHome className="home" />
+            <AiOutlineHome className="home" />
           </a>
 
-          <div className="categories-container">
+          <section className="categories-container">
             <a href="#" onClick={handleLoginClick}>
-              <FaUserAlt className="user" />{" "}
+              <AiOutlineUser className="user" />{" "}
               {isLoginOpen ? <FaCaretUp /> : <FaCaretDown />}
             </a>
             {isLoginOpen && (
-              <section className="container-login">
+              <article className="container-login">
                 {isLoggedIn ? (
                   <>
-                    <div
+                    <section
                       className="btn-login iniciar-sesion"
                       onClick={handleLogout}
                     >
                       Cerrar Sesión
-                    </div>
+                    </section>
                   </>
                 ) : (
                   <>
-                    <div
+                    <section
                       className="btn-login iniciar-sesion"
                       onClick={changeMainLogin}
                     >
                       Iniciar Sesión
-                    </div>
-                    <div
+                    </section>
+                    <section
                       className="btn-login crear-cuenta"
                       onClick={changeMainCuenta}
                     >
                       Crear Cuenta
-                    </div>
+                    </section>
                   </>
                 )}
-              </section>
+              </article>
             )}
-          </div>
+          </section>
           {isLoggedIn && (
-            <div className="container-icon">
-              <div className="container-cart-icon" onClick={handleCartClick}>
+            <section className="container-icon">
+              <article className="container-cart-icon" onClick={handleCartClick}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -147,6 +148,7 @@ export const Navbar = ({
                   strokeWidth="1.5"
                   stroke="currentColor"
                   className="icon-cart"
+                  
                 >
                   <path
                     strokeLinecap="round"
@@ -154,22 +156,22 @@ export const Navbar = ({
                     d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
                   />
                 </svg>
-                <div className="count-products">
+                <section className="count-products">
                   <span id="contador-productos">{contadorProducts}</span>
-                </div>
-              </div>
+                </section>
+              </article>
 
-              <div
+              <article
                 className={`container-cart-products ${
                   activo ? "" : "hidden-cart"
                 }`}
               >
                 {allProducts.length ? (
                   <>
-                    <div className="row-product">
+                    <section className="row-product">
                       {allProducts.map((product) => (
-                        <div className="cart-product" key={product.id}>
-                          <div className="info-cart-product">
+                        <article className="cart-product" key={product.id}>
+                          <section className="info-cart-product">
                             <span className="cantidad-producto-carrito">
                               {product.cantidad}
                             </span>
@@ -179,7 +181,7 @@ export const Navbar = ({
                             <span className="precio-producto-carrito">
                               ${product.price}
                             </span>
-                          </div>
+                          </section>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -195,14 +197,14 @@ export const Navbar = ({
                               d="M6 18L18 6M6 6l12 12"
                             />
                           </svg>
-                        </div>
+                        </article>
                       ))}
-                    </div>
+                    </section>
 
-                    <div className="cart-total">
+                    <section className="cart-total">
                       <h3>Total:</h3>
                       <span className="total-pagar">${total}</span>
-                    </div>
+                    </section>
                     <button className="btn-clear-all" onClick={onClearCart}>
                       Vaciar Carrito
                     </button>
@@ -210,8 +212,8 @@ export const Navbar = ({
                 ) : (
                   <p className="cart-empty">El carrito está vacío</p>
                 )}
-              </div>
-            </div>
+              </article>
+            </section>
           )}
         </nav>
       </header>

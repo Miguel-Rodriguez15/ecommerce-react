@@ -4,7 +4,7 @@ export const data = [
     NombreProducto: "Macbook Pro",
     price: 90,
     image:
-      "https://tiendasishop.com/media/catalog/product/m/n/mnej3ll_a.jpg?optimize=high&bg-color=255,255,255&fit=bounds&height=700&width=700&canvas=700:700",
+      "https://www.apple.com/v/macbook-pro-14-and-16/e/images/overview/compare/compare_mbp_13__e5kpzyu3ocae_large.png",
     cantidad: 1,
   },
   {
@@ -17,10 +17,10 @@ export const data = [
   },
   {
     id: 3,
-    NombreProducto: "Macbook Pro",
+    NombreProducto: "ASUS TUF GAMING F15",
     price: 90,
     image:
-      "https://tiendasishop.com/media/catalog/product/m/n/mnej3ll_a.jpg?optimize=high&bg-color=255,255,255&fit=bounds&height=700&width=700&canvas=700:700",
+      "https://falabella.scene7.com/is/image/FalabellaCO/43948892_1?wid=1500&hei=1500&qlt=70",
     cantidad: 1,
   },
   {

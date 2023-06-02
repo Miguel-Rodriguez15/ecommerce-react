@@ -61,13 +61,14 @@
 }
 
 .home  {
-  font-size: 40px;
+  font-size: 50px;
   margin: 10px;
+  color: black
 }
 .user  {
   text-decoration: none;
   color: black;
-  font-size: 40px;
+  font-size: 50px;
 
 }
 .home-link{

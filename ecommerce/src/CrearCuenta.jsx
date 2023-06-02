@@ -52,45 +52,50 @@ const CrearCuenta = ({ onLogin }) => {
   };
 
   return (
-    <div>
-      {
-      registroExitoso ? (
-        <Login />
-      ) : (
-        <div id="formulario-inicio-sesion">
-          <FaUserPlus id="FaUserCircle" />
-          <input className="input-inicio-sesion"
-            type="email"
-            value={email}
-            onChange={handleEmailChange}
-            placeholder="Correo electrónico"
-          />
-          <input className="input-inicio-sesion"
-            type="password"
-            value={password}
-            onChange={handlePasswordChange}
-            placeholder="Contraseña"
-          />
+    <section className="formulario-inicio-sesion">
+      <article className="login-box ">   {
+        registroExitoso ? (
+          <Login />
+        ) : (
+          <form className="">
+            <section className="user-box">
 
-          <input className="input-inicio-sesion"
-            type="password"
-            value={confirmPassword}
-            onChange={handleConfirmPasswordChange}
-            placeholder="Confirmar contraseña"
-          />
+              <input
+                type="email"
+                value={email}
+                onChange={handleEmailChange}
+                placeholder="Correo electrónico"
+              />
+            </section>
+            <section className="user-box">
+              <input className="input-inicio-sesion"
+                type="password"
+                value={password}
+                onChange={handlePasswordChange}
+                placeholder="Contraseña"
+              />
+            </section>
+            <section className="user-box">
+              <input className="input-inicio-sesion"
+                type="password"
+                value={confirmPassword}
+                onChange={handleConfirmPasswordChange}
+                placeholder="Confirmar contraseña"
+              />
+            </section>
+            <a
+              onClick={handleCrearCuenta}>Crear cuenta</a>
 
-          <button className="btn-inicio-sesion"
-          onClick={handleCrearCuenta}>Crear cuenta</button>
-
-          <p>
-            ¿Ya tienes cuenta?{" "}
-            <a href="#" onClick={handleSignUpClick}>
-              Inicia Sesión
-            </a>
-          </p>
-        </div>
-      )}
-    </div>
+            <p>
+              ¿Ya tienes cuenta?{" "}
+              <a href="#" onClick={handleSignUpClick}>
+                Inicia Sesión
+              </a>
+            </p>
+          </form>
+        )}
+      </article>
+    </section>
   );
 };
 

@@ -1,13 +1,7 @@
-@import url("./variables.css");
-
-.container{
-  background-color: var(--color-principal);
-}
-
-.container-centre {
+.container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .logo {
@@ -66,17 +60,22 @@
   margin-left: 8px; /* Ajusta el espaciado entre el icono de usuario y los demás elementos */
 }
 
-.home, .user  {
-  font-size: 40px;
+.home  {
+  font-size: 50px;
   margin: 10px;
   color: black
 }
-.user, .home-link  {
+.user  {
   text-decoration: none;
-  color: white;
+  color: black;
+  font-size: 50px;
+
+}
+.home-link{
+  text-decoration: none;
+  color: #000;
   cursor: pointer;
 }
-
 
 /* Media Queries para dispositivos móviles */
 @media only screen and (max-width: 768px) {

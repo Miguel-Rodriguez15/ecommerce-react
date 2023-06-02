@@ -14,9 +14,9 @@ const CrearCuenta = ({ onLogin }) => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [registroExitoso, setRegistroExitoso] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleSignUpClick = () => {
-
     onLogin(true);
   };
 
@@ -52,50 +52,51 @@ const CrearCuenta = ({ onLogin }) => {
   };
 
   return (
-    <section className="formulario-inicio-sesion">
-      <article className="login-box ">   {
-        registroExitoso ? (
-          <Login />
-        ) : (
-          <form className="">
-            <section className="user-box">
-
-              <input
-                type="email"
-                value={email}
-                onChange={handleEmailChange}
-                placeholder="Correo electrónico"
-              />
-            </section>
-            <section className="user-box">
-              <input className="input-inicio-sesion"
-                type="password"
-                value={password}
-                onChange={handlePasswordChange}
-                placeholder="Contraseña"
-              />
-            </section>
-            <section className="user-box">
-              <input className="input-inicio-sesion"
-                type="password"
-                value={confirmPassword}
-                onChange={handleConfirmPasswordChange}
-                placeholder="Confirmar contraseña"
-              />
-            </section>
-            <a
-              onClick={handleCrearCuenta}>Crear cuenta</a>
-
-            <p>
-              ¿Ya tienes cuenta?{" "}
-              <a href="#" onClick={handleSignUpClick}>
-                Inicia Sesión
-              </a>
-            </p>
-          </form>
-        )}
-      </article>
-    </section>
+    <>
+      {registroExitoso ? (
+        <Login onLogin={() => setIsLoggedIn(true)} />
+      ) : (
+        <section className="formulario-inicio-sesion">
+          <article className="login-box ">
+            <form className="">
+              <section className="user-box">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={handleEmailChange}
+                  placeholder="Correo electrónico"
+                />
+              </section>
+              <section className="user-box">
+                <input
+                  className="input-inicio-sesion"
+                  type="password"
+                  value={password}
+                  onChange={handlePasswordChange}
+                  placeholder="Contraseña"
+                />
+              </section>
+              <section className="user-box">
+                <input
+                  className="input-inicio-sesion"
+                  type="password"
+                  value={confirmPassword}
+                  onChange={handleConfirmPasswordChange}
+                  placeholder="Confirmar contraseña"
+                />
+              </section>
+              <a onClick={handleCrearCuenta}>Crear cuenta</a>
+              <p>
+                ¿Ya tienes cuenta?{" "}
+                <a href="#" onClick={handleSignUpClick}>
+                  Inicia Sesión
+                </a>
+              </p>
+            </form>
+          </article>
+        </section>
+      )}
+    </>
   );
 };
 

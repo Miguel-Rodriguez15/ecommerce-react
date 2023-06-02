@@ -12,19 +12,17 @@ function App() {
   const [total, setTotal] = useState(0);
   const [contadorProducts, setcontadorProducts] = useState(0);
   const [activeComponent, setActiveComponent] = useState(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Agrega el estado isLoggedIn
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const renderMainContent = () => {
-    if(!isLoggedIn) {
-
+    if (!isLoggedIn) {
       if (activeComponent === "Login") {
-        return <Login onLogin={() => setIsLoggedIn(true)}/>;
-      }
-  
-      if (activeComponent === "CrearCuenta") {
-        return <CrearCuenta />;
+        return <Login onLogin={() => setIsLoggedIn(true)} />;
       }
 
+      if (activeComponent === "CrearCuenta") {
+        return <CrearCuenta onLogin={() => setIsLoggedIn(true)} />;
+      }
     }
 
     return (

@@ -44,7 +44,7 @@
 .icon-cart {
 	width: 40px;
 	height: 40px;
-	stroke: #000;
+	stroke: rgb(255, 255, 255);
 	text-decoration: none;
 }
 
@@ -65,7 +65,7 @@
 .icon-cart {
 	width: 40px;
 	height: 40px;
-	stroke: #000;
+	stroke: rgb(255, 255, 255);
 }
 
 .icon-cart:hover {
@@ -258,7 +258,6 @@ form a {
 	}
 
 .container-cart-products {
-  
   top: 260px;
   left: 50%;
   transform: translate(-50%, -50%);

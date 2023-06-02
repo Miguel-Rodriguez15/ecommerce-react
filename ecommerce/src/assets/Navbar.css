@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  margin: 0 30vh;
+  margin: 0 2vw;
 }
 
 .logo {
@@ -65,17 +65,17 @@
 .home  {
   font-size: 50px;
   margin: 10px;
-  color: black
+  color: rgb(255, 255, 255);
 }
 .user  {
   text-decoration: none;
-  color: black;
+  color: rgb(255, 255, 255);
   font-size: 50px;
 
 }
 .home-link{
   text-decoration: none;
-  color: #000;
+  color: rgb(255, 255, 255);
   cursor: pointer;
 }
 

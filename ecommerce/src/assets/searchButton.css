@@ -6,7 +6,7 @@ form {
 
 .search-box {
     font-size: 10px;
-    border: solid 0.3em #000000;
+    border: solid 0.3em #ffffff;
     display: inline-block;
     position: relative;
     border-radius: 2.5em;
@@ -68,7 +68,7 @@ form {
 .search-box button[type=reset]:before,
 .search-box button[type=reset]:after {
     content: "";
-    background-color: #000000;
+    background-color: #ffffff;
     width: 0.3em;
     height: 1.4em;
     position: absolute;

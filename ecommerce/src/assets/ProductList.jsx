@@ -1,6 +1,6 @@
 import React from "react";
 import { data } from "../data/data";
-
+import { AiFillStar } from "react-icons/ai";
 export const ProductList = ({
   allProducts,
   setallProducts,
@@ -34,7 +34,7 @@ export const ProductList = ({
           <div className="info-product">
             <h2>{product.NombreProducto}</h2>
             <p className="price">${product.price}</p>
-            <p>Calificacion: </p>
+            <p>Calificacion:⭐⭐⭐⭐⭐</p> 
             <button onClick={() => onAddProduct(product)}>
               Añadir al carrito
             </button>

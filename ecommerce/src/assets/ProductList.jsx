@@ -31,15 +31,16 @@ export const ProductList = ({
           <picture>
             <img src={product.image} alt={product.NombreProducto} />
           </picture>
-          <div className="info-product">
+          <section className="info-product">
             <h2>{product.NombreProducto}</h2>
             <p className="price">${product.price}</p>
             <p>Calificacion:⭐⭐⭐⭐⭐</p> 
+            <form action="">
             <button onClick={() => onAddProduct(product)}>
               Añadir al carrito
             </button>
-          
-          </div>
+          </form>
+          </section>
         </article>
       ))}
     </section>

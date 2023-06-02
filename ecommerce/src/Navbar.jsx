@@ -5,7 +5,8 @@ import { auth } from "./conf-firebase";
 import Login from "./Login";
 import SearchBox from "./SearchBox";
 import CrearCuenta from "./CrearCuenta";
-import { FaHome, FaUserAlt, FaCaretDown, FaCaretUp } from "react-icons/fa";
+import { AiOutlineUser, AiOutlineHome } from "react-icons/ai";
+import { FaHome,  FaCaretDown, FaCaretUp } from "react-icons/fa";
 
 export const Navbar = ({
   allProducts,

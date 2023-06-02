@@ -13,6 +13,8 @@ form {
 }
 
 .search-box input[type=text] {
+    background-color: transparent;
+    color: white;
     font-family: inherit;
     font-weight: bold;
     width: 2.5em;

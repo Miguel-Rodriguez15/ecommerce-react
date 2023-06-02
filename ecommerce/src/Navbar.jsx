@@ -3,7 +3,7 @@ import Login from "./Login";
 
 import SearchBox from "./SearchBox";
 import "./assets/Navbar.css";
-
+import { AiOutlineUser } from "react-icons/ai";
 import CrearCuenta from "./CrearCuenta";
 import "./assets/pruebas.css";
 import {
@@ -95,7 +95,7 @@ export const Navbar = ({
 
           <div className="categories-container">
             <a href="#" onClick={handleLoginClick}>
-              <FaUserAlt className="user"/> {isLoginOpen ? <FaCaretUp /> : <FaCaretDown />}
+              <AiOutlineUser className="user"/> {isLoginOpen ? <FaCaretUp /> : <FaCaretDown />}
             </a>
             {isLoginOpen && (
               <section className="container-login">

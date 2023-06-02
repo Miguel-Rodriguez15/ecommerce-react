@@ -7,21 +7,20 @@ import { Navbar } from "./Navbar";
 import { ProductList } from "./assets/ProductList";
 import Footer from "./Footer";
 
-
 function App() {
   const [allProducts, setallProducts] = useState([]);
   const [total, setTotal] = useState(0);
   const [contadorProducts, setcontadorProducts] = useState(0);
   const [activeComponent, setActiveComponent] = useState(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Agrega el estado isLoggedIn
 
   const renderMainContent = () => {
     if (activeComponent === "Login") {
-      return <Login />;
+      return <Login onLogin={() => setIsLoggedIn(true)} />;
     }
 
     if (activeComponent === "CrearCuenta") {
-      return <CrearCuenta />;
+      return <CrearCuenta onLogin={() => setIsLoggedIn(true)} />;
     }
 
     return (
@@ -32,6 +31,7 @@ function App() {
         setTotal={setTotal}
         contadorProducts={contadorProducts}
         setcontadorProducts={setcontadorProducts}
+        isLoggedIn={isLoggedIn}
       />
     );
   };

@@ -88,16 +88,13 @@ export const Navbar = ({
       <header className="container" ref={navbarRef}>
         <picture className="containerLogo">
           <a onClick={changeMainHome} className="home-link">
-            <h2>Home</h2>
+            <h2>El Rincón del BIT</h2>
           </a>
           <img className="logo" src="" alt="" />
         </picture>
         <nav className="nav-container">
           <a>
             <SearchBox />
-          </a>
-          <a onClick={changeMainHome} className="home-link">
-            <AiOutlineHome className="home" />
           </a>
 
           <section className="categories-container">

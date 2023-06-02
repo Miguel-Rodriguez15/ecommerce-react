@@ -3,7 +3,7 @@ import Login from "./Login";
 
 import SearchBox from "./SearchBox";
 import "./assets/Navbar.css";
-import { AiOutlineUser } from "react-icons/ai";
+import { AiOutlineUser,AiFillStar } from "react-icons/ai";
 import CrearCuenta from "./CrearCuenta";
 import "./assets/pruebas.css";
 import {

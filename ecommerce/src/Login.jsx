@@ -26,15 +26,18 @@ const Login = ({ onLogin }) => {
     setShowSignUp(true);
   };
 
+  
+
   const handleLogin = () => {
     signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      //Si inicia y todo sale bien
+      // Si el inicio de sesión es exitoso
       const user = userCredential.user;
+      onLogin(); // Llamar a la función onLogin para indicar que el usuario ha iniciado sesión
       console.log('Inicio de sesión exitoso', user);
     })
     .catch((error) => {
-      //Si ocurre un error
+      // Si ocurre un error
       const errorCode = error.code;
       const errorMessage = error.message;
       console.log('Error al iniciar sesión', errorCode, errorMessage);

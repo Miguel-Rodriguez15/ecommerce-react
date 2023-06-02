@@ -1,4 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
+import { signOut } from "firebase/auth";
+import firebase from "firebase/compat/app";
+import { auth } from "./conf-firebase";
 import Login from "./Login";
 import SearchBox from "./SearchBox";
 import CrearCuenta from "./CrearCuenta";
@@ -12,7 +15,8 @@ export const Navbar = ({
   contadorProducts,
   setcontadorProducts,
   setActiveComponent,
-  isLoggedIn
+  isLoggedIn,
+  setIsLoggedIn,
 }) => {
   const [activo, setActivo] = useState(false);
   const [isLoginOpen, setLoginOpen] = useState(false);
@@ -60,6 +64,18 @@ export const Navbar = ({
     }
   };
 
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        console.log("Sesión cerrada");
+        setIsLoggedIn(false);
+      })
+      .catch((error) => {
+        console.log("Error al cerrar sesión: ", error);
+      });
+  };
+  
+
   useEffect(() => {
     document.addEventListener("mousedown", handleOutsideClick);
 
@@ -92,19 +108,31 @@ export const Navbar = ({
             </a>
             {isLoginOpen && (
               <section className="container-login">
-                <div
-                  className="btn-login iniciar-sesion"
-                  onClick={changeMainLogin}
-                >
-                  Iniciar Sesión
-                </div>
-
-                <div
-                  className="btn-login crear-cuenta"
-                  onClick={changeMainCuenta}
-                >
-                  Crear Cuenta
-                </div>
+                {isLoggedIn ? (
+                  <>
+                    <div
+                      className="btn-login iniciar-sesion"
+                      onClick={handleLogout}
+                    >
+                      Cerrar Sesión
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div
+                      className="btn-login iniciar-sesion"
+                      onClick={changeMainLogin}
+                    >
+                      Iniciar Sesión
+                    </div>
+                    <div
+                      className="btn-login crear-cuenta"
+                      onClick={changeMainCuenta}
+                    >
+                      Crear Cuenta
+                    </div>
+                  </>
+                )}
               </section>
             )}
           </div>

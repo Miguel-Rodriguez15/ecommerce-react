@@ -16,11 +16,11 @@ function App() {
 
   const renderMainContent = () => {
     if (activeComponent === "Login") {
-      return <Login onLogin={() => setIsLoggedIn(true)} />;
+      return <Login onLogin={() => setIsLoggedIn(true)}/>;
     }
 
     if (activeComponent === "CrearCuenta") {
-      return <CrearCuenta onLogin={() => setIsLoggedIn(true)} />;
+      return <CrearCuenta />;
     }
 
     return (
@@ -46,6 +46,8 @@ function App() {
         contadorProducts={contadorProducts}
         setcontadorProducts={setcontadorProducts}
         setActiveComponent={setActiveComponent}
+        isLoggedIn={isLoggedIn}
+        setIsLoggedIn={setIsLoggedIn}
       />
 
       <main>{renderMainContent()}</main>

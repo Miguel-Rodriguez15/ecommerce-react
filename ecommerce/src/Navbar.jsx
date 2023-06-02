@@ -95,7 +95,7 @@ export const Navbar = ({
 
           <div className="categories-container">
             <a href="#" onClick={handleLoginClick}>
-              <FaUserAlt /> {isLoginOpen ? <FaCaretUp /> : <FaCaretDown />}
+              <FaUserAlt className="user"/> {isLoginOpen ? <FaCaretUp /> : <FaCaretDown />}
             </a>
             {isLoginOpen && (
               <section className="container-login">

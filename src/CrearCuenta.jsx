@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
-import "./assets/Login.css";
+import "./assets/login.css";
 import { initializeApp } from "firebase/app";
 import { app } from "./conf-firebase"; // Importar la configuración de Firebase
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";

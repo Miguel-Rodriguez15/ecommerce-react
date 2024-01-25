@@ -6,7 +6,6 @@ import CrearCuenta from "./CrearCuenta";
 import { app, auth } from "./conf-firebase";
 import { getAuth } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import "./assets/login.css";
 import { FaUserCircle } from "react-icons/fa";
 
 const Login = ({ onLogin }) => {
